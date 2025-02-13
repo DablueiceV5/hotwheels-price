@@ -1,21 +1,19 @@
 const hotwheels = [
-  { name: "Twin Mill", price: "Rp 75.000" },
-  { name: "Bone Shaker", price: "Rp 85.000" },
-  { name: "Ford Mustang Boss 302", price: "Rp 95.000" },
-  { name: "Nissan Skyline GT-R (R34)", price: "Rp 120.000" },
-  { name: "Dodge Charger Daytona", price: "Rp 110.000" },
-  { name: "Lamborghini Sesto Elemento", price: "Rp 150.000" },
-  { name: "Tesla Roadster", price: "Rp 90.000" },
-  { name: "Chevrolet Camaro ZL1", price: "Rp 80.000" }
+  { name: "Hot Wheels Twin Mill", price: "Rp 150.000" },
+  { name: "Hot Wheels Bone Shaker", price: "Rp 120.000" },
+  { name: "Hot Wheels '69 Camaro", price: "Rp 180.000" },
+  { name: "Hot Wheels Nissan Skyline GT-R", price: "Rp 200.000" },
+  { name: "Hot Wheels Ford Mustang GT", price: "Rp 170.000" },
 ];
 
-const listContainer = document.getElementById('hotwheels-list');
+const container = document.getElementById('hotwheels-list');
 
 hotwheels.forEach(item => {
-  const div = document.createElement('div');
-  div.classList.add('item');
-  div.innerHTML = `<strong>${item.name}</strong> - ${item.price}`;
-  listContainer.appendChild(div);
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <h3>${item.name}</h3>
+    <p>Harga: ${item.price}</p>
+  `;
+  container.appendChild(card);
 });
-
-console.log('Hot Wheels Catalog Loaded');
